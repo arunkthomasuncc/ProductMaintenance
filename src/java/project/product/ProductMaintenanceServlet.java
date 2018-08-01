@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import project.business.Product;
+import project.data.ProductDB;
 import project.data.ProductIO;
 
 /**
@@ -116,7 +117,7 @@ public class ProductMaintenanceServlet extends HttpServlet{
         ProductIO.init(filePath);
         if(action.equals("displayProducts"))
         {
-            List<Product> products=ProductIO.selectProducts();
+            List<Product> products=ProductDB.selectProducts();
             req.setAttribute("products", products);
             url="/displayProducts.jsp";
         }
