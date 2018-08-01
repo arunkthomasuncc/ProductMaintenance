@@ -45,7 +45,7 @@ public class ProductDB {
             ps.setString(1, product.getCode());
             ps.setString(2, product.getDescription());
             ps.setDouble(3, product.getPrice());
-            ps.setLong(4, product.getId());
+            ps.setLong(4, product.getProductId());
             return ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -56,7 +56,7 @@ public class ProductDB {
         }
     }
 
-    public static int delete(Product product) {
+    public static int delete(Long productId) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
@@ -65,7 +65,7 @@ public class ProductDB {
                 + "WHERE productId = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setLong(1, product.getId());
+            ps.setLong(1, productId);
 
             return ps.executeUpdate();
         } catch (SQLException e) {
@@ -100,7 +100,7 @@ public class ProductDB {
         }
     }
 
-    public static Product selectProduct(String code) {
+    public static Product selectProductUsingCode(String code) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
@@ -115,7 +115,7 @@ public class ProductDB {
             Product product = null;
             if (rs.next()) {
                 product = new Product();
-                product.setId((long)rs.getInt("productId"));
+                product.setProductId((long)rs.getInt("productId"));
                 product.setCode(rs.getString("code"));
                 product.setDescription(rs.getString("description"));
                 product.setPrice(rs.getDouble("price"));
@@ -145,7 +145,7 @@ public class ProductDB {
             ArrayList<Product> productList = new ArrayList<Product>();
             while (rs.next()) {
                 Product product = new Product();
-                product.setId((long)rs.getInt("productId"));
+                product.setProductId((long)rs.getInt("productId"));
                 product.setCode(rs.getString("code"));
                 product.setDescription(rs.getString("description"));
                 product.setPrice(rs.getDouble("price"));

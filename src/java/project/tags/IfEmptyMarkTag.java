@@ -18,7 +18,7 @@ import javax.servlet.jsp.tagext.TagSupport;
 public class IfEmptyMarkTag extends TagSupport{
     
       private String field;
-    private String color = "green";
+    private String color = "red";
 
     public void setField(String field) {
         this.field = field;

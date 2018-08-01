@@ -22,11 +22,11 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Long getId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setId(Long productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
