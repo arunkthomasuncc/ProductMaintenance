@@ -20,19 +20,27 @@
         <p><mma:ifEmptyMark color="red" field=""/> marks required fields</p>
         <p>${message}</p>
         <form action="productMaint" method="POST">
-            <label for="code">Code </label>
+            <div class="block">
+            <label for="code">Code: </label>
             <input type="text" name="code" value="${code}"/>
             <mma:ifEmptyMark color="red" field="${code}"/><br>
-            <label for="description">Description </label>
-            <input type="text" name="description" value="${description}"/> 
+            </div>
+             <div class="block">
+            <label for="description">Description: </label>
+            <input class="description" type="text" name="description" value="${description}"/> 
             <mma:ifEmptyMark color="red" field="${description}"/><br>
-            <label for="price">Price </label>
+             </div>
+              <div class="block">
+            <label for="price">Price: </label>
             <input type="text" name="price" value="${price}"/> 
             <mma:ifEmptyMark color="red" field="${price}"/><br>
+              </div>
             <input type="hidden" name="productId" value="${productId}"/>
             <input type="hidden" name="oldCode" value="${oldCode}"/>
+            <div class="buttons">
             <input type="submit" name="action" value="Update Product"/>
             <input type="submit" name="action" value="View Products"> 
+            </div>
             
             </form>
     </body>

@@ -6,6 +6,7 @@ and open the template in the editor.
 /* 
     Created on : Jul 25, 2018, 8:04:43 PM
     Author     : Arun
+
 */
 
 h1{
@@ -25,6 +26,28 @@ th, td {
 }
 input[type="submit"]{
     margin-top: 1em;
+    
+}
+label{
+  display: inline-block;
+  width: 140px;
+  text-align: left;
+  font-weight: bold;
+}
+.description{
+    width: 300px;
+}
+.block{
+    margin-bottom:10px;
+}
+.buttons{
+    margin-left: 145px;
+}
+body{
+    margin-left: 15px;
+}
+.delete{
+    width: 50px;
 }
 
 

@@ -16,19 +16,25 @@
     </head>
     <body>
        
-        <h2>Are you sure you want to delete this product?</h2>
+        <h1>Are you sure you want to delete this product?</h1>
 
         <form action="productMaint" method="POST">
-            <label>Code: ${code}</label><br>
-
-            <label>Description: ${description}</label><br>
-  
-            <label>Price: ${price}</label><br>
+            <div class="block">
+            <label >Code: </label>${code}<br>
+            </div>
+            <div class="block">
+            <label>Description: </label>${description}<br>
+            </div>
+            <div class="block">
+            <label>Price:</label>${price}<br>
+            </div>
 
             <input type="hidden" name="productId" value="${productId}"/>
-            <input type="submit" name="action" value="Yes"/> 
-            <input type="submit" name="action" value="No"/> 
+            <div class="buttons">
+            <input class="delete" type="submit" name="action" value="Yes"/> 
+            <input class="delete" type="submit" name="action" value="No"/> 
             
+            </div>
             </form>
     </body>
 </html>
