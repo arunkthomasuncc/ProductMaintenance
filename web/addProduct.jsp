@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add Product</title>
+        <title>Update Product</title>
          <link rel="stylesheet" href="styles/style.css" type="text/css"/>
     </head>
     <body>

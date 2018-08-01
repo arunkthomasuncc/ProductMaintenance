@@ -83,6 +83,9 @@ public class ProductMaintenanceServlet extends HttpServlet{
             //set the product object
             //check product code exists or not. If its exist set a message and return to edit page
             //if its not exist, then call insertProduct
+          
+            url= "editProduct.jsp";
+            
         }
         else if(action.equals("deleteProduct"))
         {
@@ -120,9 +123,11 @@ public class ProductMaintenanceServlet extends HttpServlet{
             req.setAttribute("products", products);
             url="/displayProducts.jsp";
         }
-        else if(action.equals("editPrdocut"))
+        else if(action.equals("editProduct"))
         {
-            //url="editProduct.jsp";
+            Product p = (Product) ProductIO.selectProducts();
+            req.setAttribute("product", p);
+            url="/editProduct.jsp";
         }
         else if(action.equals("deleteProduct"))
         {
