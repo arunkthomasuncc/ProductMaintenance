@@ -13,13 +13,11 @@ CREATE TABLE `product` (
   PRIMARY KEY (`productID`),
   UNIQUE KEY `code_UNIQUE` (`code`),
   UNIQUE KEY `productID_UNIQUE` (`productID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 select * from product;
 
 INSERT INTO PRODUCT (code,description,price) VALUES ("8601", "86 (the band) - True Life Songs and Pictures",14.95);
-
-
 INSERT INTO PRODUCT(code,description,price) VALUES ("pf01","Paddlefoot - The first CD",12.95);
 INSERT INTO PRODUCT(code,description,price) VALUES ("pf02","Paddlefoot - The second CD",14.95);
 INSERT INTO PRODUCT(code,description,price) VALUES ("jr01","Joe Rut - Genuine Wood Grained Finish",14.95);
