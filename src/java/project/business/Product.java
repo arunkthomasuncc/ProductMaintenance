@@ -11,7 +11,11 @@ package project.business;
  */
 import java.io.Serializable;
 import java.text.NumberFormat;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Product implements Serializable {
 
     private Long productId;
@@ -21,7 +25,8 @@ public class Product implements Serializable {
 
     public Product() {
     }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getProductId() {
         return productId;
     }
@@ -46,18 +51,6 @@ public class Product implements Serializable {
         return description;
     }
 
-    public String getArtistName() {
-        String artistName
-                = description.substring(0, description.indexOf(" - "));
-        return artistName;
-    }
-
-    public String getAlbumName() {
-        String albumName
-                = description.substring(description.indexOf(" - ") + 3);
-        return albumName;
-    }
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -69,14 +62,5 @@ public class Product implements Serializable {
     public String getPriceCurrencyFormat() {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         return currency.format(price);
-    }
-
-    public String getImageURL() {
-        String imageURL = "/musicStore/images/" + code + "_cover.jpg";
-        return imageURL;
-    }
-
-    public String getProductType() {
-        return "Audio CD";
     }
 }

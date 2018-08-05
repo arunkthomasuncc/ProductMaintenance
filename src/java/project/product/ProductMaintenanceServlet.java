@@ -106,17 +106,17 @@ public class ProductMaintenanceServlet extends HttpServlet {
 
                     if (oldCode.equals(code)) {
                         product.setCode(oldCode);  //set old code into product object
-                        int numRows = ProductDB.update(product);
+                        ProductDB.update(product);
                         List<Product> products = ProductDB.selectProducts();
                         req.setAttribute("products", products);
                         url = "/displayProducts.jsp";
                     } else { //old product code and new product code are different. So we need to check if the new product code already exists in the system or not.
                         boolean isExists = ProductDB.productExists(code);
                         if (isExists) {
-                            message = "The Product Code already Exists!! Please enter a different product code Or else click on View Products to retain old values";
+                            message = "The Product Code already Exist. Please enter a different product code";
                         } else { //if new product code does not exists, go ahead and update the details
                             product.setCode(code);   //New Code
-                            int numRows = ProductDB.update(product);
+                            ProductDB.update(product);
                             List<Product> products = ProductDB.selectProducts();
                             req.setAttribute("products", products);
                             url = "/displayProducts.jsp";
