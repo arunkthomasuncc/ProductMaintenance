@@ -13,22 +13,35 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-
 /**
  *
  * @author Arun
  */
 @Entity
-public class UserRole  implements Serializable{
-    
-    
+public class UserRole implements Serializable {
+
     //private int id;
     @Id
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
     private UserPass userPass;
-    
+
     private String roleName;
-    
-    
+
+    public UserPass getUserPass() {
+        return userPass;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setUserPass(UserPass userPass) {
+        this.userPass = userPass;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
 }
