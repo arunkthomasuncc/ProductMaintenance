@@ -18,14 +18,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class UserPass implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
-    @Column(unique=true, nullable=false)
+    @Column(unique = true, nullable = false)
     private String username;
     private String password;
-    
 
     public int getUserId() {
         return userId;
@@ -50,10 +49,5 @@ public class UserPass implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    
-            
-    
-    
+
 }
