@@ -24,3 +24,15 @@ INSERT INTO PRODUCT(code,description,price) VALUES ("jr01","Joe Rut - Genuine Wo
 
 select * from product;
 commit;
+
+
+DROP DATABASE IF EXISTS project_jpa;
+
+CREATE DATABASE project_jpa;
+
+USE project_jpa;
+
+
+------------------------- Keystore Generation ----------------------------------
+keytool -genkey -alias tomcat -keyalg RSA
+keytool -importkeystore -srckeystore C:\Users\GUDDU\.keystore -destkeystore C:\Users\GUDDU\.keystore -deststoretype pkcs12
