@@ -26,8 +26,7 @@ public class UserRole  implements Serializable{
     @Id
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
-    private UserPass userPass;
-    
+    private UserPass userPass; 
     private String roleName;
     
     
