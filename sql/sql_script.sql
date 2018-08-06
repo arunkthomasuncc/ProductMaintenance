@@ -32,6 +32,15 @@ CREATE DATABASE project_jpa;
 
 USE project_jpa;
 
+insert into userpass (userid, username, password) values (1,"arun","arun"); 
+insert into userpass (userid, username, password) values (2,"shashi","shashi"); 
+insert into userpass (userid, username, password) values (3,"gabriel","gabriel"); 
+
+insert into userrole (userid, rolename) values (1, "programmer");
+insert into userrole (userid, rolename) values (2, "customer service");
+insert into userrole (userid, rolename) values (3, "tester");
+
+
 
 ------------------------- Keystore Generation ----------------------------------
 keytool -genkey -alias tomcat -keyalg RSA
