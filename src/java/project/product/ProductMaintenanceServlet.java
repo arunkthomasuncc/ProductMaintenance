@@ -183,7 +183,7 @@ public class ProductMaintenanceServlet extends HttpServlet {
                 req.setAttribute("products", products);
                 url = "/displayProducts.jsp";
             }
-        } else if (action.equals("login")) {
+        } else if (action.equals("Login")) {
 
             String username = req.getParameter("username");
             String password = req.getParameter("password");
@@ -192,7 +192,7 @@ public class ProductMaintenanceServlet extends HttpServlet {
             if (userPass == null) {
                 //go to login page
                 url = "/login.jsp";
-                message = "Please login first";
+                message = "Incorrect Username or Password!!";
 
             } else {
                 //check role
@@ -200,6 +200,8 @@ public class ProductMaintenanceServlet extends HttpServlet {
                     HttpSession session = req.getSession();
                     session.setAttribute("username", userPass.getUsername());
                     session.setAttribute("isRoleAuthenticated", true);
+                    List<Product> products = ProductDB.selectProducts();
+                    req.setAttribute("products", products);
                     url = "/displayProducts.jsp";
 
                 } else {

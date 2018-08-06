@@ -18,7 +18,7 @@
     
    <p><mma:ifEmptyMark color="red" field=""/> marks required fields</p>
         <p>${message}</p>
-        <form action="login" method="POST">
+        <form action="productMaint" method="POST">
             <div class="block">
             <label for="username"> Username: </label>
             <input type="text" name="username" value="${username}"/> 
@@ -26,7 +26,7 @@
             </div>
             <div class="block">
             <label for="password">Password: </label>
-            <input type="text" name="password" value="${password}"/> 
+            <input type="password" name="password" value="${password}"/> 
             <mma:ifEmptyMark color="red" field="${password}"/><br>
             </div>
             <div class="buttons">
