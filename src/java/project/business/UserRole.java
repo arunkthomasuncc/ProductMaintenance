@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/**
 package project.business;
 
 import java.io.Serializable;
@@ -13,10 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-/**
- *
- * @author Arun
- */
+
+
 @Entity
 public class UserRole implements Serializable {
 
@@ -45,3 +45,4 @@ public class UserRole implements Serializable {
     }
 
 }
+*/

@@ -32,13 +32,25 @@ CREATE DATABASE project_jpa;
 
 USE project_jpa;
 
-insert into userpass (userid, username, password) values (1,"arun","arun"); 
-insert into userpass (userid, username, password) values (2,"shashi","shashi"); 
-insert into userpass (userid, username, password) values (3,"gabriel","gabriel"); 
+CREATE TABLE `userpass` (
+  `Username` varchar(50) DEFAULT NULL,
+  `Password` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into userrole (userid, rolename) values (1, "programmer");
-insert into userrole (userid, rolename) values (2, "customer service");
-insert into userrole (userid, rolename) values (3, "tester");
+
+CREATE TABLE `userrole` (
+  `Username` varchar(50) DEFAULT NULL,
+  `Rolename` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into userpass (username, password) values ("arun","arun"); 
+insert into userpass (username, password) values ("shashi","shashi"); 
+insert into userpass (username, password) values ("gabriel","gabriel"); 
+
+insert into userrole (username, rolename) values ("arun", "programmer");
+insert into userrole (username, rolename) values ("shashi", "customer service");
+insert into userrole (username, rolename) values ("gabriel", "tester");
 
 
 

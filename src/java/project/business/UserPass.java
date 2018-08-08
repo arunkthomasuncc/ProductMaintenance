@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
 package project.business;
 
 import java.io.Serializable;
@@ -12,10 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- *
- * @author Arun
- */
 @Entity
 public class UserPass implements Serializable {
 
@@ -51,3 +49,4 @@ public class UserPass implements Serializable {
     }
 
 }
+*/

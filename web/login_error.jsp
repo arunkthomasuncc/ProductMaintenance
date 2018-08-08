@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css"/>
 </head>
 <body>
-    <h1>Login Form</h1>
-    <p>Please enter a username and password to continue</p>
+    <h1>Login Form Error!!</h1>
+    <p>You did not log in successfully.</p>
+    <p>Please check your username and password and try again.</p>
     
    
         <p>${message}</p>

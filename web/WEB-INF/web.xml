@@ -18,4 +18,57 @@
             index.jsp
         </welcome-file>
     </welcome-file-list>
+    <!-- Define two security roles -->
+    <security-role>
+        <description>customer service employees</description>
+        <role-name>customer service</role-name>
+    </security-role>
+    <security-role>
+        <description>system administrators</description>
+        <role-name>programmer</role-name>
+    </security-role>
+
+    <security-constraint>
+        <!-- Restrict access to all files in the /admin folder -->
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/productMaint/*</url-pattern>
+        </web-resource-collection>
+        
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+
+        <!-- Authorize the programmer and service roles -->
+        <auth-constraint>
+            <role-name>programmer</role-name>
+            <role-name>customer service</role-name>
+        </auth-constraint>
+        
+        <!-- Make sure SSL is used when using this folder -->
+        <!-- NOTE: This requires that SSL has been set up as described in chapter 15 -->
+        <!--
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+        -->
+    </security-constraint>
+
+    <!-- Use form-based authentication -->
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login_error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <!-- Use basic authentication -->
+    <!--
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Admin Login</realm-name>
+    </login-config>
+    -->
 </web-app>

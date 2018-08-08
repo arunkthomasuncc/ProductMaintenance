@@ -16,18 +16,18 @@
     <h1>Login Form</h1>
     <p>Please enter a username and password to continue</p>
     
-   <p><mma:ifEmptyMark color="red" field=""/> marks required fields</p>
+   
         <p>${message}</p>
-        <form action="productMaint" method="POST">
+        <form action="j_security_check" method="get">
             <div class="block">
             <label for="username"> Username: </label>
-            <input type="text" name="username" value="${username}"/> 
-            <mma:ifEmptyMark color="red" field="${username}"/><br>
+            <input type="text" name="j_username" /> 
+            <mma:ifEmptyMark color="red" field="j_username"/><br>
             </div>
             <div class="block">
             <label for="password">Password: </label>
-            <input type="password" name="password" value="${password}"/> 
-            <mma:ifEmptyMark color="red" field="${password}"/><br>
+            <input type="password" name="j_password" /> 
+            <mma:ifEmptyMark color="red" field="j_password"/><br>
             </div>
             <div class="buttons">
             <input type="submit" name="action" value="Login"/>

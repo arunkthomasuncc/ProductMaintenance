@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
 package project.data;
 
 import javax.persistence.EntityManager;
@@ -11,10 +13,6 @@ import javax.persistence.TypedQuery;
 import project.business.UserPass;
 import project.business.UserRole;
 
-/**
- *
- * @author Arun
- */
 public class UserDB {
 
     public static UserPass selectUser(String username, String password) {
@@ -57,3 +55,4 @@ public class UserDB {
         }
     }
 }
+*/
